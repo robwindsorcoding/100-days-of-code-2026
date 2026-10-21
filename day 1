@@ -1,0 +1,8 @@
+print("Welcome to the Band Name Generator")
+
+name = input("Enter your pet's name:\n ")
+food = input("Enter your favourite food:\n ")
+
+bandname = name + " " + food
+
+print("Your band name is " + bandname)
