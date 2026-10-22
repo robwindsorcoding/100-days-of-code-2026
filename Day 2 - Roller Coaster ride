@@ -1,0 +1,29 @@
+def coffee_ride_checker():
+    print("Welcome to Tiramisu Park and the Coffee ride!")
+
+    try:
+        # Prompt user for height and age
+        height_cm = float(input("Please enter your height in cm: "))
+        age = int(input("Please enter your age: "))
+
+        # Validation for negative or non-sensical inputs
+        if height_cm <= 0 or age <= 0:
+            print("Please enter valid positive numbers for height and age.")
+            return
+
+        # Check conditions: Height > 170 cm AND Age > 16
+        if height_cm > 170 and age > 16:
+            print(
+                "\nCongratulations! You meet all safety requirements. Enjoy the Coffee ride!"
+            )
+        else:
+            print(
+                "\nSorry, you cannot go on the Coffee ride. Guests must be over 170cm tall AND older than 16 years."
+            )
+
+    except ValueError:
+        print("\nInvalid input. Please enter numbers only.")
+
+
+if __name__ == "__main__":
+    coffee_ride_checker()
