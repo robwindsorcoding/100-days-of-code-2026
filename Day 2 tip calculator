@@ -1,0 +1,34 @@
+def tip_calculator():
+    print("Welcome to the Tip Calculator!")
+
+    # Get the total bill amount from the user
+    try:
+        bill = float(input("What was the total bill? €"))
+        tip_percent = float(
+            input(
+                "What percentage tip would you like to give? (e.g., 10, 12, 15): "
+            )
+        )
+        people = int(input("How many people to split the bill? "))
+
+        if bill <= 0 or people <= 0 or tip_percent < 0:
+            print("Please enter valid positive numbers.")
+            return
+
+        # Calculate tip and totals
+        total_tip = bill * (tip_percent / 100)
+        total_bill = bill + total_tip
+        amount_per_person = total_bill / people
+
+        # Format output to 2 decimal places
+        print("\n--- Summary ---")
+        print(f"Total tip: €{total_tip:.2f}")
+        print(f"Total bill (with tip): €{total_bill:.2f}")
+        print(f"Each person should pay: €{amount_per_person:.2f}")
+
+    except ValueError:
+        print("Invalid input. Please enter numbers only.")
+
+
+if __name__ == "__main__":
+    tip_calculator()
